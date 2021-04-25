@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CRM</title>
+    </head>
+    <body>
+        <h1>Hello All</h1>
+        <p>Second Page</p>
+        <ul>
+            {% for lead in leads %}
+                <li>{{ lead }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
