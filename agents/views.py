@@ -4,6 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from leads.models import Agent , UserProfile
 from .forms import AgentModelForm
 from .mixins import OrganiserAndLoginRequiredMixin
+from django.core.mail import send_mail
 import random
 
 
@@ -37,7 +38,7 @@ class AgentCreateView(OrganiserAndLoginRequiredMixin , generic.CreateView):
             subject = "You are invited to be an agent",
             message = "You are agent application has been accepted, Please come login to work",
             from_email = "admin@test.com",
-            receipient_list = [user.email]
+            recipient_list = [user.email]
         )
         # agent.organisation = self.request.user.userprofile
         # agent.save()
